@@ -5,7 +5,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="https://deeptensorflow.github.io/"/>
-  <updated>2017-02-18T10:02:05.000Z</updated>
+  <updated>2017-02-18T10:46:08.000Z</updated>
   <id>https://deeptensorflow.github.io/</id>
   
   <author>
@@ -20,74 +20,84 @@
     <link href="https://deeptensorflow.github.io/2017/02/18/install-tensorflow/"/>
     <id>https://deeptensorflow.github.io/2017/02/18/install-tensorflow/</id>
     <published>2017-02-18T09:56:35.000Z</published>
-    <updated>2017-02-18T10:02:05.000Z</updated>
+    <updated>2017-02-18T10:46:08.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="텐서플로우-설치"><a href="#텐서플로우-설치" class="headerlink" title="텐서플로우 설치"></a>텐서플로우 설치</h1><p>텐서플로우 1.0버전이 출시되었습니다~<br>API변동이 약간 있는 것으로 파악되며 앞으로 텐서플로우1.0을 분석하여 블로그를 작성해보도록 하겠습니다.<br>텐서플로우 공식 홈페이지에서 권장하는 방식인 virtualenv로 설치하는 방법을 택하였습니다.<br>virtualenv를 사용하면 다른 python 프로그램들에 간섭하거나 영향받는 일이 없어집니다.</p>
 <h2 id="텐서플로우-MAC-설치"><a href="#텐서플로우-MAC-설치" class="headerlink" title="텐서플로우 MAC 설치"></a>텐서플로우 MAC 설치</h2><ul>
-<li>homebrew 설치<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</div></pre></td></tr></table></figure>
-</li>
+<li>homebrew 설치</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</div></pre></td></tr></table></figure>
 <p>homebrew는 mac의 패키지 관리자입니다.</p>
 <ul>
-<li><p>python3 설치</p>
+<li>python3 설치</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install python3</div></pre></td></tr></table></figure>
-</li>
-<li><p>virtualenv 설치</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip3 install virtualenv</div></pre></td></tr></table></figure>
-</li>
-<li><p>virtualenv 환경 세팅(tensorflow 폴더)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">virtualenv tensorflow</div><div class="line">source tensorflow/bin/activate</div><div class="line">cd tensorflow</div></pre></td></tr></table></figure>
-</li>
-<li><p>tensorflow 최신버전 설치(cpu버전)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip3 install --upgrade tensorflow</div></pre></td></tr></table></figure>
-</li>
-<li><p>tensorflow 최신버전 설치(gpu버전)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip3 install --upgrade tensorflow-gpu</div></pre></td></tr></table></figure>
-</li>
-<li><p>설치에 실패한 경우<br>pip3 버전이 8.1이하인 경우일 것입니다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew upgrade python3</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>해주시고 다시 처음부터 진행해 주시기 바랍니다.</p>
 <ul>
-<li>가상환경을 종료하고 싶은경우<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">deactivate</div></pre></td></tr></table></figure>
-</li>
+<li>virtualenv 설치</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip3 install virtualenv</div></pre></td></tr></table></figure>
+<ul>
+<li>virtualenv 환경 세팅(tensorflow 폴더)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">virtualenv tensorflow</div><div class="line">source tensorflow/bin/activate</div><div class="line">cd tensorflow</div></pre></td></tr></table></figure>
+<ul>
+<li>tensorflow 최신버전 설치(cpu버전)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip3 install --upgrade tensorflow</div></pre></td></tr></table></figure>
+<ul>
+<li>tensorflow 최신버전 설치(gpu버전)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip3 install --upgrade tensorflow-gpu</div></pre></td></tr></table></figure>
+<ul>
+<li>설치에 실패한 경우</li>
+</ul>
+<p>pip3 버전이 8.1이하인 경우일 것입니다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew upgrade python3</div></pre></td></tr></table></figure><br>해주시고 다시 처음부터 진행해 주시기 바랍니다.</p>
+<ul>
+<li>가상환경을 종료하고 싶은경우</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">deactivate</div></pre></td></tr></table></figure>
 <h2 id="텐서플로우-LINUX-설치"><a href="#텐서플로우-LINUX-설치" class="headerlink" title="텐서플로우 LINUX 설치"></a>텐서플로우 LINUX 설치</h2><ul>
-<li><p>python3 설치</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install python3</div></pre></td></tr></table></figure>
-</li>
-<li><p>virtualenv 설치</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip3 install virtualenv</div></pre></td></tr></table></figure>
-</li>
-<li><p>virtualenv 환경 세팅(tensorflow 폴더)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">virtualenv tensorflow</div><div class="line">source tensorflow/bin/activate</div><div class="line">cd tensorflow</div></pre></td></tr></table></figure>
-</li>
-<li><p>tensorflow 최신버전 설치(cpu버전)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip3 install --upgrade tensorflow</div></pre></td></tr></table></figure>
-</li>
-<li><p>tensorflow 최신버전 설치(gpu버전)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip3 install --upgrade tensorflow-gpu</div></pre></td></tr></table></figure>
-</li>
-<li><p>설치에 실패한 경우<br>pip3 버전이 8.1이하인 경우일 것입니다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get upgrade python3</div></pre></td></tr></table></figure>
-</li>
+<li>python3 설치</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install python3</div></pre></td></tr></table></figure>
+<ul>
+<li>virtualenv 설치</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip3 install virtualenv</div></pre></td></tr></table></figure>
+<ul>
+<li>virtualenv 환경 세팅(tensorflow 폴더)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">virtualenv tensorflow</div><div class="line">source tensorflow/bin/activate</div><div class="line">cd tensorflow</div></pre></td></tr></table></figure>
+<ul>
+<li>tensorflow 최신버전 설치(cpu버전)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip3 install --upgrade tensorflow</div></pre></td></tr></table></figure>
+<ul>
+<li>tensorflow 최신버전 설치(gpu버전)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip3 install --upgrade tensorflow-gpu</div></pre></td></tr></table></figure>
+<ul>
+<li>설치에 실패한 경우</li>
+</ul>
+<p>pip3 버전이 8.1이하인 경우일 것입니다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get upgrade python3</div></pre></td></tr></table></figure>
 <p>해주시고 다시 처음부터 진행해 주시기 바랍니다.</p>
 <ul>
-<li>가상환경을 종료하고 싶은경우<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">deactivate</div></pre></td></tr></table></figure>
-</li>
+<li>가상환경을 종료하고 싶은경우</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">deactivate</div></pre></td></tr></table></figure>
 <h2 id="텐서플로우-WINDOW-설치"><a href="#텐서플로우-WINDOW-설치" class="headerlink" title="텐서플로우 WINDOW 설치"></a>텐서플로우 WINDOW 설치</h2><ul>
-<li><p>python 3.5 설치<br>다른 운영체제와 다르게 3.6버전을 아직 지원하지 않으니 주의 바랍니다.<br><a href="https://www.python.org/downloads/release/python-352/" rel="external nofollow noopener noreferrer" target="_blank">https://www.python.org/downloads/release/python-352/</a><br>위의 링크에서 3.5버전을 다운받으시기 바랍니다.</p>
-</li>
-<li><p>tensorflow 최신버전 설치(cpu버전)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip3 install --upgrade tensorflow</div></pre></td></tr></table></figure>
-</li>
-<li><p>tensorflow 최신버전 설치(gpu버전)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip3 install --upgrade tensorflow-gpu</div></pre></td></tr></table></figure>
-</li>
+<li>python 3.5 설치</li>
 </ul>
+<p>다른 운영체제와 다르게 3.6버전을 아직 지원하지 않으니 주의 바랍니다.<br><a href="https://www.python.org/downloads/release/python-352/" rel="external nofollow noopener noreferrer" target="_blank">https://www.python.org/downloads/release/python-352/</a><br>위의 링크에서 3.5버전을 다운받으시기 바랍니다.</p>
+<ul>
+<li>tensorflow 최신버전 설치(cpu버전)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip3 install --upgrade tensorflow</div></pre></td></tr></table></figure>
+<ul>
+<li>tensorflow 최신버전 설치(gpu버전)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip3 install --upgrade tensorflow-gpu</div></pre></td></tr></table></figure>
 ]]></content>
     
     <summary type="html">
@@ -104,33 +114,6 @@
       <category term="tensorflow" scheme="https://deeptensorflow.github.io/tags/tensorflow/"/>
     
       <category term="install" scheme="https://deeptensorflow.github.io/tags/install/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://deeptensorflow.github.io/2017/02/18/hello-world/"/>
-    <id>https://deeptensorflow.github.io/2017/02/18/hello-world/</id>
-    <published>2017-02-18T08:35:13.000Z</published>
-    <updated>2017-02-18T08:35:13.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" rel="external nofollow noopener noreferrer" target="_blank">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" rel="external nofollow noopener noreferrer" target="_blank">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" rel="external nofollow noopener noreferrer" target="_blank">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" rel="external nofollow noopener noreferrer" target="_blank">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" rel="external nofollow noopener noreferrer" target="_blank">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" rel="external nofollow noopener noreferrer" target="_blank">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>www.naver.com<br>www.google.com<br>More info: <a href="https://hexo.io/docs/deployment.html" rel="external nofollow noopener noreferrer" target="_blank">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; rel=&quot;external nofollow noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Hexo&lt;/a&gt;! This is your very first post.
-    
-    </summary>
-    
     
   </entry>
   
