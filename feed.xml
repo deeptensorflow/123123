@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Tensorflow Internal</title>
   <subtitle>All about tensorflow</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="/feed.xml" rel="self"/>
   
   <link href="https://deeptensorflow.github.io/"/>
   <updated>2017-02-18T04:10:39.000Z</updated>
