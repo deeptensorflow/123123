@@ -23,13 +23,6 @@
     </url>
 
     <url>
-        <loc>https://deeptensorflow.github.io/tags/machinelearning/</loc>
-        <lastmod>2017-02-19T03:52:48.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://deeptensorflow.github.io/tags/tensorflow/</loc>
         <lastmod>2017-02-19T06:22:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -39,6 +32,20 @@
     <url>
         <loc>https://deeptensorflow.github.io/tags/linearregression/</loc>
         <lastmod>2017-02-19T06:22:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://deeptensorflow.github.io/tags/machinelearning/</loc>
+        <lastmod>2017-02-19T09:35:19.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://deeptensorflow.github.io/tags/algorithm/</loc>
+        <lastmod>2017-02-19T09:35:19.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
