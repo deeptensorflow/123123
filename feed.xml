@@ -5,7 +5,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="https://deeptensorflow.github.io/"/>
-  <updated>2017-02-19T03:45:26.000Z</updated>
+  <updated>2017-02-19T06:12:31.000Z</updated>
   <id>https://deeptensorflow.github.io/</id>
   
   <author>
@@ -14,6 +14,66 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>선형회귀란 무엇을까? 텐서플로우를 통해 알아보자(linear regression)</title>
+    <link href="https://deeptensorflow.github.io/2017/02/19/what-is-linear-regression-with-tensorflow/"/>
+    <id>https://deeptensorflow.github.io/2017/02/19/what-is-linear-regression-with-tensorflow/</id>
+    <published>2017-02-19T04:44:28.000Z</published>
+    <updated>2017-02-19T06:12:31.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="선형회귀-linear-regression"><a href="#선형회귀-linear-regression" class="headerlink" title="선형회귀(linear regression)"></a>선형회귀(linear regression)</h1><ul>
+<li>위키백과</li>
+</ul>
+<p>선형회귀란  종속 변수 y와 한 개 이상의 독립 변수 (또는 설명 변수) X와의 선형 상관 관계를 모델링하는 회귀분석 기법입니다.<br>한 개의 설명 변수에 기반한 경우에는 단순 선형 회귀, 둘 이상의 설명 변수에 기반한 경우에는 다중 선형 회귀라고 합니다.</p>
+<ul>
+<li>쉽게 설명하자면…</li>
+</ul>
+<p>어떤사람은 2시간 공부해서 시험점수를 30점을 받았습니다.<br>어떤사람은 3시간 공부해서 40점을, 어떤사람은 4시간 공부해서 50점을 받았습니다.<br>이럴 경우에 공부시간과 시험점수 사이에 어떤 관계가 있는지 알아보고 싶겠죠?<br>이럴 때 자주 쓰이는 기법이 선형 회귀입니다.<br>그리고 더 세분화 하자면 결과에 미치는 요인이 한개이기 때문에 단순 선형 회귀라고 부릅니다.<br>단순한 공부시간 뿐만 아니라 학교의 출석율도 한번 설명 변수로 넣어보겠습니다.<br>어떤 사람은 2시간을 공부하고 학교에 5번 출석을 해서 20점을 받았습니다.<br>어떤 사람은 2시간을 공부하고 학교에 10번을 출석해서 30점을 받았구요!<br>어떤 사람은 5시간을 공부하고 학교에 20번을 출석해서 50점을 받았다고 가정하겠습니다.<br>공부시간, 학교 출석율이 시험점수에 얼마나 영향을 미치는지 궁금하죠?<br>이럴때 자주 쓰이는 기법이 선형 회귀입니다.<br>더 세분화 하자면 설명 변수가 둘 이상이니 다중 선형 회귀라고 합니다.</p>
+<ul>
+<li>방정식으로 알아보자</li>
+</ul>
+<p>위의 경우에 아래의 방정식이 세워지죠?<br>Y(시험점수) = x1(공부한시간) <em> w1(공부시간과 시험점수의 상관계수) + x2(학교 출석율) </em> w2(학교 출석율과 시험점수의 상관계수) + b(보정값)<br>요약하자면 Y = x1<em>w1 +x2</em>w2 + b 입니다.<br>중학교 때 많이 본 함수이지요?<br>이런 모델을 써서 설명변수(x1, x2)와 종속변수(Y)의 상관관계를 알고자 하는 방법인 것입니다.</p>
+<ul>
+<li>텐서플로우로 단순 선형 회귀에 대해 알아보자</li>
+</ul>
+<p>일부러 상관관계를 알기 쉽도록 눈에 보이는 모델을 써봤습니다.<br>공부시간이 1, 2, 3시간일때 시험 점수가 2, 4, 6점이라면?<br>Y = x1*w1 + b의 모델이 짜질 것입니다.<br>그리고 w1은 2, b는 0이 되어야 주어진 방정식을 만족할 것이라는 것을 우리는 알 수 있죠.<br>한번 텐서플로우 코드로 확인해 보겠습니다.</p>
+<figure class="highlight plain"><figcaption><span>tf_linear_regression</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"># 텐서플로우를 사용할 것을 알려줍니다.</div><div class="line">import tensorflow as tf</div><div class="line"></div><div class="line"># x_data는 공부시간, y_data는 시험성적 입니다.</div><div class="line">x_data = [1, 2, 3]</div><div class="line">y_data = [2, 4, 6]</div><div class="line"></div><div class="line"># W는 설명변수, b는 보정값 입니다.</div><div class="line">W = tf.Variable(tf.random_uniform([1], -1.0, 1.0))</div><div class="line">b = tf.Variable(tf.random_uniform([1], -1.0, 1.0))</div><div class="line"></div><div class="line"># placeholder를 사용하면 변수의 형태만 지정해주고 나중에 값을 넣어줘도 됩니다.</div><div class="line">X = tf.placeholder(tf.float32)</div><div class="line">Y = tf.placeholder(tf.float32)</div><div class="line"></div><div class="line"># 방정식 모델입니다.</div><div class="line">hypothesis = W * X + b</div><div class="line"></div><div class="line"># cost 함수입니다. 뒤어서 설명하겠습니다.</div><div class="line">cost = tf.reduce_mean(tf.square(hypothesis - Y))</div><div class="line"></div><div class="line"># Gradient Descent 또한 뒤에서 설명하겠습니다.</div><div class="line">a = tf.Variable(0.1)</div><div class="line">optimizer = tf.train.GradientDescentOptimizer(a)</div><div class="line">train = optimizer.minimize(cost)</div><div class="line"></div><div class="line"># 변수들을 초기화합니다.</div><div class="line">init = tf.global_variables_initializer()</div><div class="line"></div><div class="line"># 텐서플로우를 시작하게 하는 구문이라고 보시면 됩니다. 세션을 지정해줍니다.</div><div class="line">sess = tf.Session()</div><div class="line">sess.run(init)</div><div class="line"></div><div class="line"># X에 x_data를, Y에 y_data를 넣어서 2001번 소스를 돌려가며 W와 b값을 찾아갑니다.</div><div class="line">for step in range(2001):</div><div class="line">    sess.run(train, feed_dict=&#123;X: x_data, Y: y_data&#125;)</div><div class="line">    if step % 200 == 0:</div><div class="line">        print(step, sess.run(cost, feed_dict=&#123;X: x_data, Y: y_data&#125;), sess.run(W), sess.run(b))</div><div class="line"></div><div class="line"># 5시간 공부했을때와 2.5시간 공부했을 때 몇점이 나올지 출력해봅니다.</div><div class="line">print(sess.run(hypothesis, feed_dict=&#123;X: 5&#125;))</div><div class="line">print(sess.run(hypothesis, feed_dict=&#123;X: 2.5&#125;))</div><div class="line"></div></pre></td></tr></table></figure>
+<ul>
+<li>결과입니다.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"># 순서대로 몇번째 트레이닝인지, 오차범위, W값, b값 입니다.</div><div class="line">0 0.245183 [ 2.28380156] [-0.13001066]</div><div class="line">200 3.87879e-07 [ 2.00072336] [-0.00164423]</div><div class="line">400 2.25526e-11 [ 2.00000548] [ -1.27652002e-05]</div><div class="line">600 1.51582e-13 [ 2.00000072] [ -1.24958285e-06]</div><div class="line">800 1.51582e-13 [ 2.00000072] [ -1.24958285e-06]</div><div class="line">1000 1.51582e-13 [ 2.00000072] [ -1.24958285e-06]</div><div class="line">1200 1.51582e-13 [ 2.00000072] [ -1.24958285e-06]</div><div class="line">1400 1.51582e-13 [ 2.00000072] [ -1.24958285e-06]</div><div class="line">1600 1.51582e-13 [ 2.00000072] [ -1.24958285e-06]</div><div class="line">1800 1.51582e-13 [ 2.00000072] [ -1.24958285e-06]</div><div class="line">2000 1.51582e-13 [ 2.00000072] [ -1.24958285e-06]</div><div class="line"></div><div class="line"># 5시간 공부했을 때와 2.5시간 공부했을 때를 출력해줍니다.</div><div class="line">[ 10.00000286]</div><div class="line">[ 5.00000048]</div></pre></td></tr></table></figure>
+<ul>
+<li>cost 함수 &amp; gradient descent란?</li>
+</ul>
+<p>김성훈 교수님의 강의가 이것을 이해하는데는 최고 같습니다.<br><div class="video-container"><iframe src="//www.youtube.com/embed/TxIVr-nk1so" frameborder="0" allowfullscreen></iframe></div></p>
+<ul>
+<li><p>다중 선형 회귀 함수는 어떻게 처리를 할까요?<br>다중 선형 회귀함수를 보기 좋게 처리하려면 한가지 아이디어가 필요합니다.<br>행렬의 아이디어가 필요한데요.<br>Y = X1<em>W1 + X2</em>W2 + X3<em>W3 + …. + b 이런 꼴이 선형 회귀 모델인데요.<br>이것을 어떻게 간결하게 표현할 방법이 없을까요?<br>있습니다!<br>Y = X1</em>W1 + X2<em>W2 + X3</em>W3 +… + 1*b의 꼴로 두면 됩니다.<br>그리고 이것을 행렬로 변환!<br><img src="https://deeptensorflow.github.io/images/linear_regression.png" alt="linearregression"><br>요런식으로 행렬로 관리하면 되겠죠?<br>(아, b1, b2, … bn은 전부 같은 값입니다.)<br>그런데 더 간략하게 하고 싶다면 b까지 행렬에 포함시킬 수 있습니다.<br><img src="https://deeptensorflow.github.io/images/multi_linear_regression.png" alt="multi_linearregression"><br>이럴경우에 코드는 어떻게 되냐구요?</p>
+</li>
+<li><p>다중 선형 회귀 함수 텐서플로우 예시 코드</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">import tensorflow as tf</div><div class="line"></div><div class="line">x_data = [[1., 2., 5.],[1., 3., 7.], [1., 4., 10.], [1., 7., 12.]]</div><div class="line">y_data = [1., 2., 3., 4.]</div><div class="line"></div><div class="line">W = tf.Variable(tf.random_uniform([3,1], -1, 1))</div><div class="line"></div><div class="line">hypothesis = tf.matmul(x_data, W)</div><div class="line"></div><div class="line">cost = tf.reduce_mean(tf.square(hypothesis - y_data))</div><div class="line"></div><div class="line">a = tf.Variable(0.01)  # learning rate, alpha</div><div class="line">optimizer = tf.train.GradientDescentOptimizer(a)</div><div class="line">train = optimizer.minimize(cost)  # goal is minimize cost</div><div class="line"></div><div class="line">init = tf.global_variables_initializer()</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line">sess.run(init)</div><div class="line"></div><div class="line">for step in range(2001):</div><div class="line">    sess.run(train)</div><div class="line">    if step % 200 == 0:</div><div class="line">        print (step, sess.run(cost), sess.run(W))</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>다중 선형 회귀를 이용했는데도 hypothesis 함수 코드가 엄청 간결하죠?<br>행렬의 위력입니다~ (다들 선형대수 열공을..)<br>참고로 x_data와 y_data에는 별다른 의미 없는 값을 넣었습니다.<br>그냥 소스코드 참고용이라… ㅎ</p>
+<h1 id="결론은"><a href="#결론은" class="headerlink" title="결론은?"></a>결론은?</h1><p>linear regression이 대략적으로 이런 것이고 tensorflow를 이용하면 쉽게 구현이 가능하다!</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;선형회귀-linear-regression&quot;&gt;&lt;a href=&quot;#선형회귀-linear-regression&quot; class=&quot;headerlink&quot; title=&quot;선형회귀(linear regression)&quot;&gt;&lt;/a&gt;선형회귀(linear regress
+    
+    </summary>
+    
+      <category term="Tensorflow" scheme="https://deeptensorflow.github.io/categories/Tensorflow/"/>
+    
+      <category term="App" scheme="https://deeptensorflow.github.io/categories/Tensorflow/App/"/>
+    
+    
+      <category term="tensorflow" scheme="https://deeptensorflow.github.io/tags/tensorflow/"/>
+    
+      <category term="linearregression" scheme="https://deeptensorflow.github.io/tags/linearregression/"/>
+    
+  </entry>
   
   <entry>
     <title>텐서플로우1.0 설치시 일어나는 기본 오류를 잡아보자 (bazel로 소스코드 빌드)</title>
