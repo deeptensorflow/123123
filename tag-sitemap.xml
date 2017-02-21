@@ -44,22 +44,22 @@
     </url>
 
     <url>
-        <loc>https://deeptensorflow.github.io/tags/tensorflow/</loc>
+        <loc>https://deeptensorflow.github.io/tags/build/</loc>
         <lastmod>2017-02-21T01:25:59.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://deeptensorflow.github.io/tags/tensorflow/</loc>
+        <lastmod>2017-02-21T12:24:46.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://deeptensorflow.github.io/tags/internal/</loc>
-        <lastmod>2017-02-21T01:25:59.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://deeptensorflow.github.io/tags/build/</loc>
-        <lastmod>2017-02-21T01:25:59.000Z</lastmod>
+        <lastmod>2017-02-21T12:24:46.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
