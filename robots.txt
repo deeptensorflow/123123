@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: null
 Allow: *
-Sitemap: /sitemap.xml
+Sitemap: https://deeptensorflow.github.io/sitemap.xml
