@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: null
+Allow: null
+Sitemap: /sitemap.xml
