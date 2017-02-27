@@ -44,13 +44,6 @@
     </url>
 
     <url>
-        <loc>https://deeptensorflow.github.io/tags/tensorflow/</loc>
-        <lastmod>2017-02-23T20:02:39.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://deeptensorflow.github.io/tags/internal/</loc>
         <lastmod>2017-02-23T20:02:39.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -60,6 +53,13 @@
     <url>
         <loc>https://deeptensorflow.github.io/tags/build/</loc>
         <lastmod>2017-02-23T20:02:39.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://deeptensorflow.github.io/tags/tensorflow/</loc>
+        <lastmod>2017-02-27T12:20:58.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
