@@ -5,7 +5,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="https://deeptensorflow.github.io/"/>
-  <updated>2017-02-28T02:54:57.000Z</updated>
+  <updated>2017-02-28T03:09:43.000Z</updated>
   <id>https://deeptensorflow.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://deeptensorflow.github.io/2017/02/28/mnist-for-beginners/"/>
     <id>https://deeptensorflow.github.io/2017/02/28/mnist-for-beginners/</id>
     <published>2017-02-28T00:17:40.000Z</published>
-    <updated>2017-02-28T02:54:57.000Z</updated>
+    <updated>2017-02-28T03:09:43.000Z</updated>
     
     <content type="html"><![CDATA[<p>이 글은 <a href="https://www.tensorflow.org/get_started/mnist/beginners" rel="external nofollow noopener noreferrer" target="_blank">https://www.tensorflow.org/get_started/mnist/beginners</a> 공식 홈페이지 내용을 번역한 것이 주 내용입니다.</p>
 <h1 id="MNIST란-무엇일까"><a href="#MNIST란-무엇일까" class="headerlink" title="MNIST란 무엇일까?"></a>MNIST란 무엇일까?</h1><p>MNIST란 본래 미국에서 우편번호를 분류할때 기계에게 분류를 맡기려는 시도에서 비롯되었습니다.<br>MNIST는 간단한 컴퓨터 시각 데이터 세트입니다.<br>이것은 다음과 같은 자필 자릿수의 이미지로 구성됩니다.<br><img src="https://deeptensorflow.github.io/images/mnist.png" alt="MNIST"><br>또한 각 이미지의 레이블을 포함하여 어떤 숫자인지 알려줍니다.<br>예를 들어 위 이미지의 레이블은 5, 0, 4 및 1입니다.<br>이 자습서에서는 이미지를보고 어떤 자릿수인지 예측하는 모델을 교육 할 것입니다.<br>우리의 목표는 최첨단 성능을 구현하는 매우 정교한 모델을 교육하는 것이 아닙니다.<br>우리는 Softmax Regression이라 불리는 매우 간단한 모델로 시작할 것입니다.<br>이 자습서의 실제 코드는 매우 짧으며 모든 흥미로운 내용은 단 3 줄에서 발생합니다.<br>그러나 TensorFlow가 작동하는 방법과 핵심 기계 학습 개념 모두에 대한 아이디어를 이해하는 것이 매우 중요합니다.</p>
@@ -57,9 +57,9 @@
     
     </summary>
     
-      <category term="TensorFlow" scheme="https://deeptensorflow.github.io/categories/TensorFlow/"/>
+      <category term="Tensorflow" scheme="https://deeptensorflow.github.io/categories/Tensorflow/"/>
     
-      <category term="App" scheme="https://deeptensorflow.github.io/categories/TensorFlow/App/"/>
+      <category term="App" scheme="https://deeptensorflow.github.io/categories/Tensorflow/App/"/>
     
     
       <category term="tensorflow" scheme="https://deeptensorflow.github.io/tags/tensorflow/"/>
